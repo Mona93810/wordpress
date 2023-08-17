@@ -41,14 +41,14 @@ jobs:
       - name: Configure WordPress wp-config.php
         run: |
           sudo cp /var/www/html/wordpress/wp-config.php /var/www/html/wordpress/wp-config.php
-          sudo sed -i 's/database_name_here/wordpress_db/' /var/www/html/wordpress/wp-config.php
-          sudo sed -i 's/username_here/wordpress_user/' /var/www/html/wordpress/wp-config.php
-          sudo sed -i 's/password_here/your_password/' /var/www/html/wordpress/wp-config.php
+          sudo sed -i 's/wordpress_db/' /var/www/html/wordpress/wp-config.php
+          sudo sed -i 's/wordpress_user/' /var/www/html/wordpress/wp-config.php
+          sudo sed -i 's/your_password/' /var/www/html/wordpress/wp-config.php
 
       - name: Configure Nginx for WordPress
         run: |
           sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/wordpress
-          sudo sed -i 's/your_domain.com/wordpresstask.zapto.org/' /etc/nginx/sites-available/wordpress
+          sudo sed -i 's/wordpresstask.zapto.org/' /etc/nginx/sites-available/wordpress
           sudo sed -i 's|/var/www/html|/var/www/html/wordpress|' /etc/nginx/sites-available/wordpress
           sudo ln -s /etc/nginx/sites-available/wordpress /etc/nginx/sites-enabled/
           sudo nginx -t
