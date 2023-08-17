@@ -41,9 +41,9 @@ jobs:
       - name: Configure WordPress wp-config.php
         run: |
           sudo cp /var/www/html/wordpress/wp-config.php /var/www/html/wordpress/wp-config.php
-          sudo sed -i 's/wordpress_db/' /var/www/html/wordpress/wp-config.php
-          sudo sed -i 's/wordpress_user/' /var/www/html/wordpress/wp-config.php
-          sudo sed -i 's/your_password/' /var/www/html/wordpress/wp-config.php
+          sudo nano  sed -i 's/wordpress_db/' /var/www/html/wordpress/wp-config.php
+          sudo nano sed -i 's/wordpress_user/' /var/www/html/wordpress/wp-config.php
+          sudo nano sed -i 's/your_password/' /var/www/html/wordpress/wp-config.php
 
       - name: Configure Nginx for WordPress
         run: |
