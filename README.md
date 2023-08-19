@@ -1,3 +1,9 @@
+## Live Site
+
+The WordPress website is live and accessible at the following URL: [https://wordpresstask.ddns.net](https://wordpresstask.ddns.net)
+
+For administrative access, you can visit the WordPress admin dashboard at: [https://wordpresstask.ddns.net/wp-admin/](https://wordpresstask.ddns.net/wp-admin/)
+
 # WordPress Deployment on AWS EC2 with Nginx and Terraform
 
 This document outlines the successful deployment of a WordPress website on an AWS EC2 instance using the Nginx web server, MySQL, PHP (LEMP stack), and Terraform for provisioning. The deployment was completed with a focus on security best practices and website performance optimization.
