@@ -57,7 +57,7 @@ server {
     server_name wordpresstask.ddns.net;
     root /var/www/html/wordpress;
 
-    location / {
+    location / { 
         try_files \$uri \$uri/ /index.php?\$args;
         index index.php;
     }
@@ -79,4 +79,4 @@ sudo systemctl restart nginx
 sudo apt-get install -y certbot python3-certbot-nginx
 
 # Request a certificate for the domain, agreeing to the Terms of Service and providing an email address
-sudo certbot --nginx -d wordpresstask.ddns.net --agree-tos --email manivardha999@gmail.com --no-eff-email
+sudo certbot --nginx -d wordpresstask.ddns.net --agree-tos --email monabommakanti@gmail.com --no-eff-email
