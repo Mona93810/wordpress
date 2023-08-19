@@ -8,7 +8,7 @@ This document outlines the successful deployment of a WordPress website on an AW
 
 ## Server Provisioning
 
-### AWS EC2 Instance
+### AWS EC2 Instance  
 
 - *Provisioned an EC2 instance*(ec2.tf) running Ubuntu 22.04(ami-053b0d53c279acc90) on AWS using Terraform.
 - *Configured Security Groups* to allow only necessary inbound and outbound traffic.
