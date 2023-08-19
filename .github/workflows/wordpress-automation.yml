@@ -1,0 +1,42 @@
+name: Deploy EC2 Instance with Terraform
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+env:
+  AWS_REGION: us-east-1 # Updated to use the us-east-1 region
+
+jobs:
+  terraform:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ env.AWS_REGION }}
+
+    - name: Set up Terraform
+      uses: hashicorp/setup-terraform@v2
+
+    - name: Terraform Initialize
+      run: terraform init
+
+    - name: Terraform Plan
+      if: github.event_name == 'pull_request'
+      run: terraform plan -out=terraform.tfplan
+    
+    - name: Terraform Apply
+      if: github.event_name == 'pull_request'
+      run: terraform apply -auto-approve terraform.tfplan
+    
