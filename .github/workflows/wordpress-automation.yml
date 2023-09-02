@@ -12,7 +12,7 @@ env:
   AWS_REGION: us-east-1
 
 jobs:
-  terraform:
+  build:
     runs-on: ubuntu-latest
 
     steps:
