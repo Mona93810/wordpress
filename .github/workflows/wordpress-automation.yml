@@ -9,7 +9,7 @@ on:
       - main
 
 env:
-  AWS_REGION: us-east-1 Updated to use the us-east-1 region
+  AWS_REGION: us-east-1
 
 jobs:
   terraform:
