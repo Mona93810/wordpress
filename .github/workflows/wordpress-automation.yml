@@ -12,8 +12,9 @@ env:
   AWS_REGION: us-east-1
 
 jobs:
-  build:
+  terraform:
     runs-on: ubuntu-latest
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
